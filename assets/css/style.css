@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+	--light-grey: #E5E8E8;
+	--neon-green: #39FF14;
+	--light-green: #DAF7A6;
+	--gold: #FFC300;
+	--neon-yellow: #F3F315;
+	--black: #393939;
+	--bit-font: 'VT323', monospace;
+}
+
+body {
+	background-color: var(--light-grey);
+}
+
+html, h1, h2, h3, h4, h5, h6, p {
+	font-family: var(--bit-font);
+	color: var(--black);
+}
+
+.main {
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	display: grid;
+	grid-template-rows: 10% 80% 10%;
+	grid-template-columns: 25% 25% 25% 25%;
+}
+
+.header {
+	width: 100%;
+	text-align: center;
+	grid-column-start: 1;
+	grid-column-end: four;
+	grid-row-start: 1;
+	grid-row-end: 1;
+}
+
+.header h1 {
+	font-size: 4rem;
+	margin: 20px 0;
+}
+
+.tshirts {
+	grid-column-start: 1;
+	grid-column-end: four;
+	grid-row-start: 2;
+	grid-row-end: 2;
+	display: grid;
+	grid-template-rows: 50% auto;
+	grid-template-columns: 25% 25% 25% 25%;
+}
+
+.tshirts img {
+	width: 80%;
+	height: auto;
+	margin-top: -40px;
+}
+
+.footer {
+	grid-column-start: 1;
+	grid-column-end: four;
+	grid-row-start: 3;
+	grid-row-end: 3;
+	align-self: end;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+
+.draggable {
+	cursor: grab;
+}
+
+.draggable.is-dragging { 
+	opacity: 0.7; 
+	cursor: grabbing;
+}
+

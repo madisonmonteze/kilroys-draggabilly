@@ -1,0 +1,6 @@
+Description: Move your mouse to roll the princess dice.
+
+Byline: Made by @madisonmonteze
+
+Credits:
+I learned to make this from this SuperHi tutorial. Images are not my own (I found them on the Internet). Fonts used are Sprat and ?
