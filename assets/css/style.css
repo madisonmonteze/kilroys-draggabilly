@@ -10,6 +10,19 @@
 	--bit-font: 'VT323', monospace;
 }
 
+.grid {
+	display: grid;
+	place-items: center;
+}
+
+.flex {
+	display: -webkit-box;
+	display: -moz-box;
+   	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
 body {
 	background-color: var(--light-grey);
 }
@@ -23,51 +36,116 @@ html, h1, h2, h3, h4, h5, h6, p {
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
-	display: grid;
-	grid-template-rows: 10% 80% 10%;
-	grid-template-columns: 25% 25% 25% 25%;
+	display: flex;
+	flex-direction: column;
+}
+
+.marquee {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	font-size: 20px;
+	line-height: 1;
+	overflow: hidden;
+	background-color: var(--neon-yellow);
+	color: var(--gold);
+}
+
+@keyframes moveLeft {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-2000vw);
+	}
+}
+
+.marquee span {
+	animation: moveLeft 350s infinite;
+	white-space: nowrap;
+	display: block;
+	position: relative;
 }
 
 .header {
 	width: 100%;
-	text-align: center;
-	grid-column-start: 1;
-	grid-column-end: four;
-	grid-row-start: 1;
-	grid-row-end: 1;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-.header h1 {
+.title {
+	padding-left: 20px;
+}
+
+.title h1 {
 	font-size: 4rem;
-	margin: 20px 0;
+	margin: 10px 0 0 0;
+}
+
+.title p {
+	margin: 10px 0;
+}
+
+
+.about {
+	text-align: right;
+	padding-right: 20px;
+	margin-top: 10px;
+}
+
+.about a {
+	font-size: 24px;
+	color: inherit;
+	text-decoration: none;
+	padding: 0 5px 0 0;
+}
+
+.about a:hover {
+	cursor: pointer;
+	background-color: var(--neon-green);
+	border-radius: 5px;
+	font-style: italic;
 }
 
 .tshirts {
-	grid-column-start: 1;
-	grid-column-end: four;
-	grid-row-start: 2;
-	grid-row-end: 2;
-	display: grid;
-	grid-template-rows: 50% auto;
-	grid-template-columns: 25% 25% 25% 25%;
+	flex-direction: column;
 }
 
-.tshirts img {
+.top, .bottom {
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.bottom {
+	margin-top: -5%;
+}
+	
+.tshirt {
+	width: 25%;
+	height: 25%;
+	margin-top: -20px;
+}
+
+.tshirt img {
 	width: 80%;
 	height: auto;
-	margin-top: -40px;
 }
 
-.footer {
-	grid-column-start: 1;
-	grid-column-end: four;
-	grid-row-start: 3;
-	grid-row-end: 3;
-	align-self: end;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	padding: 0 20px;
+.details, .tshirt img {
+	grid-area: 1/1;
+}
+
+.details {
+	width: 50%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.details h3 {
+	text-transform: uppercase;
 }
 
 .draggable {
@@ -79,3 +157,86 @@ html, h1, h2, h3, h4, h5, h6, p {
 	cursor: grabbing;
 }
 
+/* Modal */
+.desc {
+	transition: all 0.5s ease;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+
+}
+
+.desc-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--light-green);
+    padding: 10px 20px;
+    width: 40%;
+    height: auto;
+  	flex-direction: column;
+  	border: 5px solid var(--gold);
+}
+
+.desc-header {
+	flex-direction: row;
+	align-items: flex-start;
+  	justify-content: space-between;
+  	width: 100%;
+}
+
+.desc-header h2 {
+	margin: 0;
+}
+
+.desc-header a:hover {
+	cursor: pointer;
+}
+
+.copy a {
+	text-decoration: none;
+	border-bottom: 2px solid var(--black);
+	color: inherit;
+}
+
+.close {
+	font-size: 24px;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.clicked {
+	visibility: hidden;
+}
+
+@media all and (max-width: 500px) {
+	.marquee {
+		display: none;
+	}
+	.main {
+		overflow: visible;
+	}
+	.tshirt {
+		width: 50%;
+	}
+	.desc-content {
+		height: 90%;
+		width: 80%;
+	}
+}

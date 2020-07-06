@@ -1,41 +1,33 @@
 // using jQuery to make the t-shirt images draggable
 let $draggable = $('.draggable').draggabilly();
 
+// create marquee effect for byline
+function makeMarquee() {
+    const title = 'Made by Madison Hardt'
+    const marqueeText = new Array(500).fill(title).join(' &mdash; ')
+    const marquee = document.querySelector('.marquee span')
+    marquee.innerHTML = marqueeText
+}
+  
+// run marquee function
+makeMarquee()
 
+// modal popup
+var modal = document.querySelector(".modal");
+var trigger = document.querySelector(".desc");
+var closeButton = document.querySelector(".close");
 
-// function randomizePosition(){
-//   // get the dimensions of the viewport and remove the size of the div
-//     var h = $(window).height() - 40;
-//     var w = $(window).width() - 40;
-    
-//     var newh = Math.floor(Math.random() * h);
-//     var neww = Math.floor(Math.random() * w);
-    
-//     return [newh,neww];    
-    
-// }
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+    trigger.classList.toggle("clicked");
+}
 
-// // move that peach! using jQuery's animate function, plugging in new coordinates and speed
-// function animateDiv(){
-//     var newq = randomizePosition();
-//     var oldq = $('.peach').offset();
-//     var speed = calculateSpeed([oldq.top, oldq.left], newq);
-    
-//     $('.peach').animate({ top: newq[0], left: newq[1] }, speed, function(){
-//       animateDiv();        
-//     });
-    
-// };
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
 
-// // speed modifier
-// function calculateSpeed(prev, next) {
-//     var x = Math.abs(prev[1] - next[1]);
-//     var y = Math.abs(prev[0] - next[0]);
-//     var greatest = x > y ? x : y;
-//     var speedModifier = 0.1;
-//     var speed = Math.ceil(greatest/speedModifier);
-//     return speed;
-// }
-// animateDiv();
-
-
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);

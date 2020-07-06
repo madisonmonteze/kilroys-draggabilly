@@ -24,26 +24,117 @@
 <body>
 
 	<section class="main">
-		<div class="header">
-			<h1>Drag-a-Roy&rsquo;s</h1>
+		<div class="flex header">
+			<div class="title">
+				<h1>Drag-a-Roy&rsquo;s</h1>
+				<p>Click and drag each t-shirt for details.</p>
+			</div>
+			
+			<div class="about">
+				<!-- Open modal -->
+				<a class="desc">???</a>
+			</div>
+			
 		</div>
 		
-		<div class="tshirts">
-			<img class="draggable" src="assets/images/roys_1.png" alt="Roy's T-shirt">
-			<img class="draggable" src="assets/images/roys_2.png" alt="Roy's T-shirt">
-			<img class="draggable" src="assets/images/roys_3.png" alt="Roy's T-shirt">
-			<img class="draggable" src="assets/images/roys_4.png" alt="Roy's T-shirt">	
-			<img class="draggable" src="assets/images/roys_5.png" alt="Roy's T-shirt">
-			<img class="draggable" src="assets/images/roys_6.png" alt="Roy's T-shirt">
-			<img class="draggable" src="assets/images/roys_7.png" alt="Roy's T-shirt">
-			<img class="draggable" src="assets/images/roys_8.png" alt="Roy's T-shirt">	
+		<div class="flex tshirts">
+			<div class="flex top">
+				<div class="grid tshirt">
+					<img class="draggable" src="assets/images/roys_1.png" alt="Roy's T-shirt">
+					<div class="flex details">
+						<h3>Roys 500</h3>
+						<p>Little 500 <br>Spring 2017</p>
+					</div>
+				</div>
+	
+				<div class="grid tshirt">
+					<img class="draggable" src="assets/images/roys_2.png" alt="Roy's T-shirt">
+					<div class="flex details">
+						<h3>Kilroys Racing</h3>
+						<p>Little 500 Quals <br>Spring 2017</p>
+					</div>
+				</div>
+	
+				<div class="grid tshirt">
+					<img class="draggable" src="assets/images/roys_3.png" alt="Roy's T-shirt">
+					<div class="flex details">
+						<h3>Kilroys Rockets</h3>
+						<p>Troy Williams drafted by the Houston Rockets <br>Spring 2017</p>
+					</div>
+				</div>
+	
+				<div class="grid tshirt">
+					<img class="draggable" src="assets/images/roys_4.png" alt="Roy's T-shirt">
+					<div class="flex details">
+						<h3>Kilroys Homecoming</h3>
+						<p>No one went to the football game, probably <br>Fall 2017</p>
+					</div>
+				</div>
+
+			</div>
+			
+			<div class="flex bottom">
+				<div class="grid tshirt">
+					<img class="draggable" src="assets/images/roys_5.png" alt="Roy's T-shirt">
+					<div class="flex details">
+						<h3>Roys Rap</h3>
+						<p>For Chance the Rapper <br>Spring 2017</p>
+					</div>
+				</div>
+	
+				<div class="grid tshirt">
+					<img class="draggable" src="assets/images/roys_6.png" alt="Roy's T-shirt">
+					<div class="flex details">
+						<h3>Kilroys Raptors</h3>
+						<p>OG Anunoby drafted by the Toronto Raptors <br>Fall 2017</p>
+					</div>
+				</div>
+	
+				<div class="grid tshirt">
+					<img class="draggable" src="assets/images/roys_7.png" alt="Roy's T-shirt">
+					<div class="flex details">
+						<h3>Kilroys Spring Break</h3>
+						<p>Those were the days <br>Spring 2017</p>
+					</div>
+				</div>
+	
+				<div class="grid tshirt">
+					<img class="draggable" src="assets/images/roys_8.png" alt="Roy's T-shirt">
+					<div class="flex details">
+						<h3>Kilroys Army</h3>
+						<p>IU Soccer was the GOAT <br>Fall 2017</p>
+					</div>
+				</div>
+
+			</div>
+
+			
+		</div>
+		<div class="marquee">
+			<span>Made by Madison Hardt</span>
 		</div>
 
-		<div class="footer">
-			<p>Made by Madison Hardt</p>
-			<p>What is this?</p>
-		</div>
+		<!-- modal content -->
+		<div class="modal">
+			<div class="flex desc-content">
+				<div class="flex desc-header">
+					<h2>About</h2>
+					<a class="close">X</a>
+				</div>
+				<div class="copy">
+					<p>I graduated from Indiana University in December 2017. The 3.5 years I spent living in Bloomington, Indiana while attending school were some of the best times of my life&mdash;which I&rsquo;m often nostalgic for.</p>
 
+					<p>In Bloomington, just off of campus on a street called Kirkwood, there&rsquo;s a bar called Kilroy&rsquo;s&mdash;known for it&rsquo;s $2 Tuesdays, "FAC" (Friday After Class patio party), and T-shirt Thursdays.</p>
+
+					<p>I loved T-shirt Thursdays (you pay a $5 cover for a surprise t-shirt) and this is my collection of Kilroy&rsquo;s tanks, t-shirts, and sweatshirts from 2017. They usually spoofed other logos and designed the weekly t-shirt based on current school happenings (i.e. an IU Basketball player getting drafted to the NBA, etc).</p>
+					
+					<p>This website was built with CSS, JavaScript, jQuery, and some Photoshop. I used <a href="https://github.com/desandro/draggabilly" target="_blank">Draggabilly</a> by David DeSandro for the drag-and-drop effect, and I learned the marquee effect in <a href="https://www.superhi.com/" target="_blank">SuperHi's</a> Advanced CSS + JS course.</p>
+
+					<p>You can find me on <a href="https://twitter.com/madisonmonteze" target="_blank" alt="@madisonmonteze">Twitter</a>, <a href="https://github.com/madisonmonteze" target="_blank" alt="Madison Hardt on GitHub">GitHub</a>, <a href="https://www.linkedin.com/in/madisonmonteze/" target="_blank" alt="Madison Hardt on LinkedIn">LinkedIn</a>, and by email at <a href="mailto:madison.hardt@hey.com" target="_blank" alt="madison.hardt@hey.com">madison.hardt@hey.com</a>.</p>
+				</div>
+			</div>
+	
+		</div>
 
 	</section>
 
