@@ -79,7 +79,7 @@ html, h1, h2, h3, h4, h5, h6, p {
 }
 
 .title h1 {
-	font-size: 4rem;
+	font-size: 64px;
 	margin: 10px 0 0 0;
 }
 
@@ -232,11 +232,20 @@ html, h1, h2, h3, h4, h5, h6, p {
 	.main {
 		overflow: visible;
 	}
+	.title h1 {
+		font-size: 40px;
+	}
 	.tshirt {
 		width: 50%;
 	}
 	.desc-content {
 		height: 90%;
 		width: 80%;
+	}
+	.bottom {
+		margin-top: 0;
+	}
+	.tshirt {
+		margin-top: 0;
 	}
 }
