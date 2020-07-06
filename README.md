@@ -7,4 +7,5 @@ Built with CSS, JavaScript, jQuery, and some Photoshop.
 
 ## Credits
 [Draggabilly JS library by David DeSandro](https://github.com/desandro/draggabilly)
+
 My sister Camile for Photoshopping my t-shirt images. 
